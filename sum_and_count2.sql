@@ -1,2 +1,4 @@
-SELECT DISTINCT(continent)
-  FROM world;
+SELECT
+  DISTINCT(continent)
+FROM
+  world;

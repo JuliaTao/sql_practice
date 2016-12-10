@@ -1,3 +1,7 @@
-SELECT continent, COUNT(name)
-  FROM world
-  GROUP BY continent;
+SELECT
+  continent
+  ,COUNT(name)
+FROM
+  world
+GROUP BY
+  continent;
