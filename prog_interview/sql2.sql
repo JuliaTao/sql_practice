@@ -1,16 +1,20 @@
 -- http://www.programmerinterview.com/index.php/database-sql/practice-interview-question-1/
 -- The names of all salespeople that do not have any order with Samsonic.
 
-SELECT DISTINCT
-  S.Name
+SELECT
+  Name
 FROM
-  Salesperson S LEFT JOIN Orders O
-ON
-  S.ID = O.salesperson_id
+  Salesperson
 WHERE
-  O.cust_id NOT IN (SELECT
-                      C.ID
-                    FROM
-                      Cusomter C
-                    WHERE
-                      C.Name = "Samsonic");
+  Name NOT IN (SELECT DISTINCT
+                s.name
+              FROM
+                Salesperson S
+                JOIN Orders O
+                  ON
+                    S.ID = O.salesperson_id
+                JOIN Customers C
+                  ON
+                    O.cust_id = C.ID
+              WHERE
+                C.Name = 'Samsonic');
