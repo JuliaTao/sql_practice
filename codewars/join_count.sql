@@ -1,7 +1,7 @@
 SELECT
   p.id
   ,p.name
-  ,COUNT(t.id)
+  ,COUNT(t.id) AS toy_count
 FROM
   people p JOIN toys t
 ON
