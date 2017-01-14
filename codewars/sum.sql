@@ -1,4 +1,4 @@
 SELECT
-  SUM(age)
+  SUM(age) AS age_sum
 FROM
   people;
