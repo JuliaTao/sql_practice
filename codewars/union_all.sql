@@ -9,7 +9,7 @@
   FROM
     ussales u
   WHERE
-   u.price > 50
+    u.price > 50
 UNION ALL
   SELECT
     'EU' AS location
