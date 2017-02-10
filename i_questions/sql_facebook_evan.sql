@@ -45,9 +45,7 @@ FROM
       GROUP BY
         o.content_id) AS sub
 GROUP BY
-  num_comments
-WHERE
-  num_comments IN (2,10,50);
+  num_comments;
 
 
 -- follow up
@@ -81,9 +79,7 @@ FROM
         o.content_id = r.target_id
       GROUP BY
         o.action_type
-        o.content_id) AS sub
+        ,o.content_id) AS sub
 GROUP BY
   num_comments
-  ,action_type
-WHERE
-  num_comments IN (2,10,50);
+  ,action_type;
