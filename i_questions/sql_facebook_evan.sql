@@ -1,3 +1,78 @@
+-- Create table
+
+CREATE TABLE content_actions
+(action_type text, content_id int, target_id int)
+;
+INSERT INTO content_actions VALUES
+ ('photo', 11, NULL)
+, ('comment', 12, 11)
+, ('comment', 13, 11)
+, ('comment', 14, 11)
+, ('photo', 15, NULL)
+, ('comment', 16, 15)
+, ('comment', 17, 15)
+, ('comment', 18, 15)
+, ('photo', 19, NULL)
+, ('comment', 20, 19)
+, ('comment', 21, 19)
+, ('share', 22, 11)
+, ('comment', 23, 22)
+, ('share', 24, 15)
+, ('comment', 25, 24)
+, ('share', 26, 15)
+, ('comment', 27, 26)
+, ('comment', 28, 26)
+, ('post', 29, NULL)
+, ('comment', 30, 29)
+, ('comment', 31, 29)
+, ('post', 32, NULL)
+, ('comment', 33, 32)
+, ('comment', 34, 32)
+, ('post', 35, NULL)
+, ('comment', 36, 35)
+, ('comment', 37, 35)
+, ('comment', 38, 35)
+, ('comment', 39, 35)
+, ('share', 40, 29)
+, ('comment', 41, 40)
+, ('comment', 42, 40)
+, ('comment', 43, 40)
+, ('share', 44, 29)
+, ('comment', 45, 44)
+, ('comment', 46, 44)
+, ('comment', 47, 44)
+, ('share', 48, 35)
+, ('comment', 49, 48)
+, ('comment', 50, 48)
+, ('comment', 51, 48)
+, ('share', 52, 35)
+, ('comment', 53, 52)
+, ('comment', 54, 52)
+, ('comment', 55, 52)
+, ('share', 56, 35)
+, ('comment', 57, 56)
+, ('comment', 58, 56)
+, ('comment', 59, 56)
+;
+
+-- Answers
+
+Answer to first part:
+num_comments, num_stories
+1, 2
+2, 4
+3, 7
+4, 1
+
+Answer to second part
+num_comments num_stories, action_type
+2, 1, photo
+3, 2, photo
+2, 2, post
+4, 1, post
+1, 2, share
+2, 1, share
+3, 5, share
 
 -- We use the log content_actions to track a variety of users activity.
 -- It has the following data:
