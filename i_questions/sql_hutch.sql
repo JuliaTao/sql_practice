@@ -44,26 +44,26 @@ GROUP BY
 -- 3. Top 3 customers by state in 2016?
 
 WITH tmp AS
-(SELECT
-  c.State
-  c.ID AS CustomerID
-  ,SUM(i.Price * oi.Quantity) AS Sales_2016
-FROM
-  Orders o
-  JOIN
-  OrderItems oi
-  ON o.ID = oi.OrderID
-  JOIN
-  Items i
-  ON oi.ItemID = i.ID
-  JOIN
-  Customers c
-  ON o.CustomerID =  c.ID
-WHERE
-  date_part('year', o.FulfilledAt) = 2016
-GROUP BY
-  c.State
-  ,c.ID)
+  (SELECT
+    c.State
+    c.ID AS CustomerID
+    ,SUM(i.Price * oi.Quantity) AS Sales_2016
+  FROM
+    Orders o
+    JOIN
+    OrderItems oi
+    ON o.ID = oi.OrderID
+    JOIN
+    Items i
+    ON oi.ItemID = i.ID
+    JOIN
+    Customers c
+    ON o.CustomerID =  c.ID
+  WHERE
+    date_part('year', o.FulfilledAt) = 2016
+  GROUP BY
+    c.State
+    ,c.ID)
 
 SELECT
   *
