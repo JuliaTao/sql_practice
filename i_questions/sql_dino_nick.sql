@@ -18,8 +18,7 @@ WITH tmp AS (SELECT
               Bones b
               ON f.BoneID = b.ID
               WHERE
-              b.name = 'veloceraptor'
-            )
+              b.name = 'veloceraptor')
 
 SELECT
   *
